@@ -1,11 +1,98 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="header">
+                            <h4 class="title">Podstawowe Dane</h4>
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data Zlecenia</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Numer delegacji </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data Wyjazdu</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data Powrotu</label>
+                                        <input type="date" class="form-control"> 
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row-md-12">
+                                <div class="form-group">
+                                    <label>Cel wyjazdu</label>
+                                    <select class="form-control">
+                                        <option>Wdrożenie</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row-md-12">
+                                <div class="form-group">
+                                    <label>Transport</label>
+                                    <select class="form-control">
+                                        <option>Samochód służbowy</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Kraj</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Miasto</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="header">
+                            <h4 class="title">Dodatkowe Dane</h4>
+                    </div>
+                    <div class="content">
+                            <p class="description text">Zarzadzaj swoimi delegacjami krajowymi oraz zagranicznymi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Moje delegacje</h4>
+                        <p class="category">Delegacje w miesiacu Maj</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
@@ -20,29 +107,6 @@
                                     </tr>
                                 </tbody>
                           </table>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="header">
-                        <h4 class="title">Table on Plain Background</h4>
-                        <p class="category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let row of tableData2.dataRows">
-                                    <td *ngFor="let cell of row">{{cell}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>

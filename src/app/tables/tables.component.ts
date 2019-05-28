@@ -18,25 +18,14 @@ export class TablesComponent implements OnInit {
 
   ngOnInit() {
       this.tableData1 = {
-          headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary'],
+          headerRow: [ 'ID', 'Umowa', 'Miasto', 'Data', 'Ilość dni', 'actions'],
           dataRows: [
-              ['1', 'Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
-              ['2', 'Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
-              ['3', 'Sage Rodriguez', 'Netherlands', 'Baileux', '$56,142'],
-              ['4', 'Philip Chaney', 'Korea, South', 'Overland Park', '$38,735'],
-              ['5', 'Doris Greene', 'Malawi', 'Feldkirchen in Kärnten', '$63,542'],
-              ['6', 'Mason Porter', 'Chile', 'Gloucester', '$78,615']
-          ]
-      };
-      this.tableData2 = {
-          headerRow: [ 'ID', 'Name',  'Salary', 'Country', 'City' ],
-          dataRows: [
-              ['1', 'Dakota Rice','$36,738', 'Niger', 'Oud-Turnhout' ],
-              ['2', 'Minerva Hooper', '$23,789', 'Curaçao', 'Sinaai-Waas'],
-              ['3', 'Sage Rodriguez', '$56,142', 'Netherlands', 'Baileux' ],
-              ['4', 'Philip Chaney', '$38,735', 'Korea, South', 'Overland Park' ],
-              ['5', 'Doris Greene', '$63,542', 'Malawi', 'Feldkirchen in Kärnten', ],
-              ['6', 'Mason Porter', '$78,615', 'Chile', 'Gloucester' ]
+              ['1', 'IPIN KiP', 'Warszawa', '12-05-2019', '2'],
+              ['2', 'BB Cały system', 'Bielsko Biał', '12-05-2019', '3'],
+              ['3', 'Ustroń Księgowość', 'Ustroń', '12-05-2019', '1'],
+              ['4', 'Katowice Ligota', 'Katowice', '12-05-2019', '1'],
+              ['5', 'Katowice Ceglana', 'Katowice', '12-05-2019', '2'],
+              ['6', 'Rzeszów Polna', 'Rzeszów', '12-05-2019', '1']
           ]
       };
   }
