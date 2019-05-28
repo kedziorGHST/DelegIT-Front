@@ -1,0 +1,299 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Delegacje</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Zarzadzaj swoimi delegacjami krajowymi oraz zagranicznymi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Rozliczenia</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Dodaj koszty przejazdów oraz zaliczki</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                    <a href="#" class="btn btn-default btn-fill">Przejazdy</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Wprowadź przejazdy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Pojazdy</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Zarzadzaj pojazdami</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Delegacje</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Zarzadzaj swoimi delegacjami krajowymi oraz zagranicznymi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Rozliczenia</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Dodaj koszty przejazdów oraz zaliczki</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                    <a href="#" class="btn btn-default btn-fill">Przejazdy</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Wprowadź przejazdy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-home">
+                            <div class="header">
+                                <a href="#" class="btn btn-default btn-fill">Pojazdy</a>
+                            </div>
+                            <div class="content">
+                                <p class="description text">Zarzadzaj pojazdami</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" src="assets/img/faces/face-8.jpg" alt="..."/>
+
+                                <h4 class="title">Aleksander Kędzior<br />
+                                    <small>aleked</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p class="description text-center"> Full Stack Developer </p>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                        <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                        <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart
+                  [title]="'Wyjazdy w miesiącu'"
+                  [subtitle]="'Maj'"
+                  [chartClass]="'ct-perfect-fourth'"
+                  [chartType]="emailChartType"
+                  [chartData]="emailChartData"
+                  [legendItems]="emailChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-clock-o'"
+                  [footerText]="'Dane sprzed 2 dni'">
+                </lbd-chart>
+            </div>
+            <div class="col-md-8">
+                <lbd-chart
+                  [title]="'Wyjazdy'"
+                  [subtitle]="'Miesięczny bilans'"
+                  [chartType]="monthsChartType"
+                  [chartData]="monthsChartData"
+                  [chartOptions]="monthsChartOptions"
+                  [chartResponsive]="monthsChartResponsive"
+                  [legendItems]="monthsChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-history'"
+                  [footerText]="'Updated 3 minutes ago'">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <lbd-chart
+                  [title]="'Delegacje 2018'"
+                  [subtitle]="'Wszystkie delegacje za rok 2018'"
+                  [chartType]="activityChartType"
+                  [chartData]="activityChartData"
+                  [chartOptions]="activityChartOptions"
+                  [chartResponsive]="activityChartResponsive"
+                  [legendItems]="activityChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-check'"
+                  [footerText]="'Data information certified'">
+                </lbd-chart>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Zlecenia do wykonania</h4>
+                        <p class="category">Aktualne zadania dla firm</p>
+                    </div>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox1" type="checkbox">
+                                                <label for="checkbox1">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox2" type="checkbox" checked>
+                                                <label for="checkbox2">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox3" type="checkbox" checked>
+                                                <label for="checkbox3">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                        </td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox4" type="checkbox">
+                                                <label for="checkbox4">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox5" type="checkbox" >
+                                                <label for="checkbox5">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Read "Following makes Medium better"</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input id="checkbox6" type="checkbox">
+                                                <label for="checkbox6">
+
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td>Unfollow 5 enemies from twitter</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="footer">
+                            <hr>
+                            <div class="stats">
+                                <i class="fa fa-history"></i> Updated 3 minutes ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
