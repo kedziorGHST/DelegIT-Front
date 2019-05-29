@@ -1,64 +1,65 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="header">
-                            <h4 class="title">Podstawowe Dane</h4>
-                    </div>
-                    <div class="content">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Data Zlecenia</label>
-                                        <input type="date" class="form-control">
+                    <form>
+                        <div class="col-md-8">
+                            <div class="header">
+                                    <h4 class="title">Podstawowe Dane</h4>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Data Zlecenia</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Numer delegacji </label>
+                                            <input type="text" class="form-control">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Numer delegacji </label>
-                                        <input type="text" class="form-control">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Data Wyjazdu</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Data Powrotu</label>
+                                            <input type="date" class="form-control"> 
+                                        </div>   
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                                <div class="row-md-12">
                                     <div class="form-group">
-                                        <label>Data Wyjazdu</label>
-                                        <input type="date" class="form-control">
+                                        <label>Cel wyjazdu</label>
+                                        <select class="form-control">
+                                            <option>Wdrożenie</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="row-md-12">
                                     <div class="form-group">
-                                        <label>Data Powrotu</label>
-                                        <input type="date" class="form-control"> 
-                                    </div>   
+                                        <label>Transport</label>
+                                        <select class="form-control">
+                                            <option>Samochód służbowy</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row-md-12">
-                                <div class="form-group">
-                                    <label>Cel wyjazdu</label>
-                                    <select class="form-control">
-                                        <option>Wdrożenie</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row-md-12">
-                                <div class="form-group">
-                                    <label>Transport</label>
-                                    <select class="form-control">
-                                        <option>Samochód służbowy</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
+                                <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Kraj</label>
@@ -71,22 +72,71 @@
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-md-4">
+                            <div class="header">
+                                <h4 class="title">Dodatkowe Dane</h4>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="header">
-                            <h4 class="title">Dodatkowe Dane</h4>
-                    </div>
-                    <div class="content">
-                            <p class="description text">Zarzadzaj swoimi delegacjami krajowymi oraz zagranicznymi</p>
-                    </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Projekt</label>
+                                            <select class="form-control">
+                                                <option>BB</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Zadanie</label>
+                                            <select class="form-control">
+                                                <option>Wdrożenie</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Ryczałt</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="row">
+                                    <label>Dojazd</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="row">
+                                    <label>Razem prejazdy</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="row">
+                                    <label>Dieta</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="row">
+                                    <label>Noclegi wg rachunku</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="row">
+                                    <label>Inne wydatki</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-fill pull-left">Zapisz</button>
+                        <div class="clearfix"></div>  
+                    </form>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -94,22 +144,77 @@
                         <h4 class="title">Moje delegacje</h4>
                         <p class="category">Delegacje w miesiacu Maj</p>
                     </div>
-                    <div class="content table-responsive table-full-width">
-                          <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
-                                    </tr>
-                                </thead>
+                    <div class="content">
+                        <div class="table-full-width">
+                            <table class="table">
                                 <tbody>
-                                    <tr *ngFor="let row of tableData1.dataRows">
-                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    <tr>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rozliczenie PIT dla szpitala w Bielsku Białej</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
-                          </table>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="footer">
+                        <hr>
+                        <div class="stats">
+                            <i class="fa fa-history"></i> Updated 3 minutes ago
+                        </div>
+                    </div>
+                </div>             
+            </div>    
+        </div>  
     </div>
 </div>
