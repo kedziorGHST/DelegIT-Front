@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
     ['1', 'IPIN', '5334756315', 'Sokolska', 'Warszawa', 'Kowalski', ''],
     ['2', 'Bielsko', '1078541155', 'Hoża', 'Bielsko Biała', 'Nowak', ''],
     ['3', 'Medyków', '6016601840', 'Wysoka', 'Katowice', 'Bober', ''],
-    ['4','Ceglana', '1121131598', 'Ceglana', 'Katowice', 'Newone', ''],
+    ['4', 'Ceglana', '1121131598', 'Ceglana', 'Katowice', 'Newone', ''],
     ['5', 'Nebo', '3384583382', 'Miła', 'Rybnik', 'Smith', '']
     ]
     };
