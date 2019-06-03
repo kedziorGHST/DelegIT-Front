@@ -11,12 +11,14 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { HomeComponent } from '../../home/home.component';
 import { UserComponent } from '../../user/user.component';
 import { TablesComponent } from '../../tables/tables.component';
-import { TypographyComponent } from '../../typography/typography.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ClientsComponent } from '../../clients/clients.component'
 import { CarsComponent } from 'app/cars/cars.component';
 import { RidesComponent } from 'app/rides/rides.component';
+import { SettlementComponent } from 'app/settlement/settlement.component';
+import { ContractsComponent } from 'app/contracts/contracts.component';
+import { VisitsComponent } from 'app/visits/visits.component';
 
 
 @NgModule({
@@ -31,12 +33,14 @@ import { RidesComponent } from 'app/rides/rides.component';
     HomeComponent,
     UserComponent,
     TablesComponent,
-    TypographyComponent,
     NotificationsComponent,
     UpgradeComponent,
     ClientsComponent,
     CarsComponent,
-    RidesComponent
+    RidesComponent,
+    SettlementComponent,
+    ContractsComponent,
+    VisitsComponent
   ]
 })
 
