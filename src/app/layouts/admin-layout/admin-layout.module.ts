@@ -16,6 +16,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ClientsComponent } from '../../clients/clients.component'
 import { CarsComponent } from 'app/cars/cars.component';
+import { RidesComponent } from 'app/rides/rides.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CarsComponent } from 'app/cars/cars.component';
     NotificationsComponent,
     UpgradeComponent,
     ClientsComponent,
-    CarsComponent
+    CarsComponent,
+    RidesComponent
   ]
 })
 
