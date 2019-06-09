@@ -16,7 +16,6 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {ClientsComponent } from '../../clients/clients.component'
 import { CarsComponent } from 'app/cars/cars.component';
 import { RidesComponent } from 'app/rides/rides.component';
-import { SettlementComponent } from 'app/settlement/settlement.component';
 import { ContractsComponent } from 'app/contracts/contracts.component';
 import { VisitsComponent } from 'app/visits/visits.component';
 
@@ -38,7 +37,6 @@ import { VisitsComponent } from 'app/visits/visits.component';
     ClientsComponent,
     CarsComponent,
     RidesComponent,
-    SettlementComponent,
     ContractsComponent,
     VisitsComponent
   ]
