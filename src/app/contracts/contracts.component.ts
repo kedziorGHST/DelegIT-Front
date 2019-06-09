@@ -17,13 +17,13 @@ export class ContractsComponent implements OnInit {
 
   ngOnInit() {
     this.tableData1 = {
-      headerRow: [ '#', 'Numer Rejestracyjny', 'Rok', 'Typ', 'Marka', 'Model', 'Opcje'],
+      headerRow: [ '#', 'Rodzaj', 'Klient', 'Od', 'Do', 'Zakres', 'Opcje'],
       dataRows: [
-      ['1', 'SWD12345', '2018', 'Prywatny', 'BMW', 'E90', ''],
-      ['2', 'SK15978', '2017', 'Służbowy', 'KIA', 'Ceed', ''],
-      ['3', 'SR45687', '2015', 'Służbowy', 'Volkswagen', 'Passat', ''],
-      ['4', 'KR45678', '2019', 'Służbowy', 'Opel', 'Corsa', ''],
-      ['5', 'SZ25879', '2017', 'Służbowy', 'Chevrolet', 'Cruze', '']
+      ['1', 'Serwis', 'IPIN Warszawa', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
+      ['2', 'Wdrożenie', 'UCK Ceglana', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
+      ['3', 'Serwis', 'UCK Ligota', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
+      ['4', 'Wdrożenie', 'UCK Ligota', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
+      ['5', 'Serwis', 'IPIN Warszawa', '7/3/2019', '8/3/2019', 'Kadry,Płace', '']
       ]
       };
   }
