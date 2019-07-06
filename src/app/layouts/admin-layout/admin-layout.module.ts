@@ -13,11 +13,13 @@ import { UserComponent } from '../../user/user.component';
 import { TablesComponent } from '../../tables/tables.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import {ClientsComponent } from '../../clients/clients.component'
+import { CustomersComponent } from '../../customers/customers.component';
+import { CustomersListComponent } from '../../customers/customers-list/customers-list.component';
 import { CarsComponent } from 'app/cars/cars.component';
 import { RidesComponent } from 'app/rides/rides.component';
 import { ContractsComponent } from 'app/contracts/contracts.component';
 import { VisitsComponent } from 'app/visits/visits.component';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { VisitsComponent } from 'app/visits/visits.component';
     TablesComponent,
     NotificationsComponent,
     UpgradeComponent,
-    ClientsComponent,
+    CustomersComponent,
+    CustomersListComponent,
     CarsComponent,
     RidesComponent,
     ContractsComponent,
