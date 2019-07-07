@@ -1,90 +1,88 @@
-<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-    <div class="main-content" >
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="header">
-                            <h4 class="title">Dodaj klienta</h4>
-                        </div>
-                        <div class="content">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <label>Pełna nazwa firmy</label>
-                                            <input name="fullCompanyName" #fullCompanyName="ngModel" [(ngModel)]="service.formData.fullCompanyName" type="text" class="form-control" placeholder="Pełna nazwa firmy" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label>Skrócona nazwa</label>
-                                            <input type="text" class="form-control" placeholder="Skrócona nazwa" value="aleked">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">NIP</label>
-                                            <input type="email" class="form-control" placeholder="NIP" value="1254986546">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Kierownik Imię</label>
-                                            <input type="text" class="form-control" placeholder="Imię" value="Aleksander">
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+                <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Dodaj klienta</h4>
+                            </div>
+                            <div class="content">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Pełna nazwa firmy</label>
+                                                <input name="fullCompanyName" #fullCompanyName="ngModel" [(ngModel)]="service.formData.fullCompanyName" type="text" class="form-control" placeholder="Pełna nazwa firmy" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Skrócona nazwa</label>
+                                                <input name="shortCompanyName" #shortCompanyName="ngModel" [(ngModel)]="service.formData.shortCompanyName" type="text" class="form-control" placeholder="Skrócona nazwa firmy" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="nip">NIP</label>
+                                                <input name="nip" #nip="ngModel" [(ngModel)]="service.formData.nip" type="text" class="form-control" placeholder="NIP" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Kierownik Nazwisko</label>
-                                            <input type="text" class="form-control" placeholder="Nazwisko" value="Kędzior">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Ulica</label>
-                                            <input type="text" class="form-control" placeholder="Ulica" value="Hoża 1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Kierownik Imię</label>
+                                                <input name="managerFName" #managerFName="ngModel" [(ngModel)]="service.formData.managerFName" type="text" class="form-control" placeholder="Imię Kierownika" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Kierownik Nazwisko</label>
+                                                <input name="managerLName" #managerLName="ngModel" [(ngModel)]="service.formData.managerLName" type="text" class="form-control" placeholder="Nazwisko Kierownika" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Miasto</label>
-                                            <input type="text" class="form-control" placeholder="Miasto" value="Warszawa">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Ulica</label>
+                                                <input name="street" #street="ngModel" [(ngModel)]="service.formData.street" type="text" class="form-control" placeholder="Ulica" value="" required>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Kraj</label>
-                                            <input type="text" class="form-control" placeholder="Kraj" value="Polska">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Kod pocztowy</label>
-                                            <input type="number" class="form-control" placeholder="Kod pocztowy">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <button type="submit" class="btn btn-info btn-fill pull-right">Zapisz</button>
-                                <div class="clearfix"></div>
-                            </form>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Miasto</label>
+                                                <input name="city" #city="ngModel" [(ngModel)]="service.formData.city" type="text" class="form-control" placeholder="Miasto" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Kraj</label>
+                                                <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" type="text" class="form-control" placeholder="Kraj" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Kod pocztowy</label>
+                                                <input name="postCode" #country="ngModel" [(ngModel)]="service.formData.postCode" type="text" class="form-control" placeholder="Kod pocztowy" value="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <button type="submit" class="btn btn-info btn-fill pull-right">Zapisz CZEMU TO KURWA NIE DZIALA</button>
+                                    <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <app-customers-list></app-customers-list>
-                </div>
+        </form>
+            <div>
+                <app-customers-list></app-customers-list>
             </div>
         </div>
     </div>
-</form>
+</div>
