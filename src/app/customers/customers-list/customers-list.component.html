@@ -5,34 +5,31 @@
     </div>
     <div class="content">
         <div class="content table-responsive table-full-width">
-            <table class="table">
+            <table class="table table-hover">
               <thead>
                   <tr>
                     <th class="text-center">{{ tableData1.headerRow[0] }}</th>
                     <th>{{  tableData1.headerRow[1]  }}</th>
-                    <th>{{  tableData1.headerRow[2] }}</th>
-                    <th>{{  tableData1.headerRow[3] }}</th>
+                    <th>{{  tableData1.headerRow[2]  }}</th>
+                    <th>{{  tableData1.headerRow[3]  }}</th>
                     <th>{{  tableData1.headerRow[4]  }}</th>
                     <th>{{  tableData1.headerRow[5]  }}</th>
-                    <th class="text-right">{{tableData1.headerRow[6]  }}</th>
+                    <th class="text-right">{{ tableData1.headerRow[6]  }}</th>
                   </tr>
               </thead>
             <tbody>
-                <tr *ngFor="let row of tableData1.dataRows">
-                    <td class="text-center">{{ row[0] }}</td>
-                    <td>{{ row[1] }}</td>
-                    <td>{{ row[2] }}</td>
-                    <td>{{ row[3] }}</td>
-                    <td>{{ row[4] }}</td>
-                    <td>{{ row[5] }}</td>
+                <tr *ngFor="let row of service.list">
+                    <td class="text-center">{{ row.id }}</td>
+                    <td >{{ row.shortCompanyName }}</td>
+                    <td >{{ row.managerLName }}</td>
+                    <td >{{ row.street }}</td>
+                    <td >{{ row.city }}</td>
+                    <td >{{ row.country }}</td>
                     <td class="td-actions text-right">
-                        <a rel="tooltip" title="Zobacz Profil" class="btn btn-info btn-simple btn-xs">
-                            <i class="fa fa-user"></i>
-                        </a>
-                        <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs">
+                        <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs" (click)="populateForm(row)">
                             <i class="fa fa-edit"></i>
                         </a>
-                        <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs">
+                        <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs" (click)="onDelete(row.id)">
                             <i class="fa fa-times"></i>
                         </a>
                     </td>
