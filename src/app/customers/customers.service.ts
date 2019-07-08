@@ -24,7 +24,7 @@ export class CustomersService {
     return this.http.delete(this.rootURL + '/Customers/' + id);
   }
 
-  refreshList(){
+  refreshList() {
     this.http.get(this.rootURL + '/Customers')
     .toPromise()
     .then(res => this.list = res as Customers[]);

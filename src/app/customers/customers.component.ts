@@ -4,7 +4,7 @@ import { Customers } from './customers.model';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
-declare var $:any;
+declare var $: any;
 
 
 @Component({
@@ -15,7 +15,7 @@ declare var $:any;
 export class CustomersComponent implements OnInit {
 
 
-  constructor(private service:CustomersService,
+  constructor(private service: CustomersService,
       private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -23,8 +23,9 @@ export class CustomersComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
-    if (form != null)
-      form.form.reset();
+    if (form != null) {
+    form.form.reset();
+    }
     this.service.formData = {
       id: 0,
       fullCompanyName: '',
@@ -47,7 +48,7 @@ export class CustomersComponent implements OnInit {
     }
   }
 
-  insertRecord(form: NgForm){
+  insertRecord(form: NgForm) {
     this.service.postCustomers().subscribe(
       res => {
         this.resetForm();

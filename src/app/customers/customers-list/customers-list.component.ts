@@ -5,7 +5,7 @@ import { Customers } from '../customers.model';
 declare interface TableData {
   headerRow: string[];
 }
-declare var $:any;
+declare var $: any;
 
 @Component({
   selector: 'app-customers-list',
