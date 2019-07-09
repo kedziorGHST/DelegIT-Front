@@ -10,7 +10,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
 import { UserComponent } from '../../user/user.component';
-import { TablesComponent } from '../../tables/tables.component';
+import { DelegationComponent } from '../../delegation/delegation.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CustomersComponent } from '../../customers/customers.component';
@@ -33,7 +33,7 @@ import { VisitsComponent } from 'app/visits/visits.component';
   declarations: [
     HomeComponent,
     UserComponent,
-    TablesComponent,
+    DelegationComponent,
     NotificationsComponent,
     UpgradeComponent,
     CustomersComponent,

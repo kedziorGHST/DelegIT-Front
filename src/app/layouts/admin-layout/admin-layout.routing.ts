@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { HomeComponent } from '../../home/home.component';
 import { UserComponent } from '../../user/user.component';
-import { TablesComponent } from '../../tables/tables.component';
+import { DelegationComponent } from '../../delegation/delegation.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CustomersComponent } from '../../customers/customers.component';
@@ -14,7 +14,7 @@ import { VisitsComponent } from 'app/visits/visits.component';
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },
     { path: 'user',           component: UserComponent },
-    { path: 'table',          component: TablesComponent },
+    { path: 'delegation',          component: DelegationComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'clients',        component: CustomersComponent },

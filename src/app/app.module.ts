@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CustomersService } from './customers/customers.service';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { CustomersService } from './customers/customers.service';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    UserInfoComponent
   ],
   providers: [CustomersService],
   bootstrap: [AppComponent]

@@ -6,11 +6,11 @@ declare interface TableData {
 }
 
 @Component({
-  selector: 'app-tables',
-  templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.css']
+  selector: 'app-delegation',
+  templateUrl: './delegation.component.html',
+  styleUrls: ['./delegation.component.css']
 })
-export class TablesComponent implements OnInit {
+export class DelegationComponent implements OnInit {
     public tableData1: TableData;
     public tableData2: TableData;
 
