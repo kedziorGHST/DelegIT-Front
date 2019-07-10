@@ -14,12 +14,12 @@ import { VisitsComponent } from 'app/visits/visits.component';
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: HomeComponent },
     { path: 'user',           component: UserComponent },
-    { path: 'delegation',          component: DelegationComponent },
+    { path: 'delegation',     component: DelegationComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'clients',        component: CustomersComponent },
     { path: 'cars',           component: CarsComponent },
     { path: 'rides',          component: RidesComponent },
     { path: 'contracts',      component: ContractsComponent },
-    { path: 'visits',      component: VisitsComponent },
+    { path: 'visits',         component: VisitsComponent },
 ];
