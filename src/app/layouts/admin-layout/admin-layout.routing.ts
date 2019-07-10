@@ -10,9 +10,10 @@ import { CarsComponent } from 'app/cars/cars.component';
 import { RidesComponent } from 'app/rides/rides.component';
 import { ContractsComponent } from 'app/contracts/contracts.component';
 import { VisitsComponent } from 'app/visits/visits.component';
+import { LoginComponent } from 'app/user/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: HomeComponent },
+    { path: 'home',           component: HomeComponent },
     { path: 'user',           component: UserComponent },
     { path: 'delegation',     component: DelegationComponent },
     { path: 'notifications',  component: NotificationsComponent },
@@ -22,4 +23,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'rides',          component: RidesComponent },
     { path: 'contracts',      component: ContractsComponent },
     { path: 'visits',         component: VisitsComponent },
+    { path: 'login',          component: LoginComponent },
 ];

@@ -1,5 +1,6 @@
 
-<div class="wrapper">
+<form>
+<div *ngIf="checkPath('login')" class="wrapper">
   <div class="sidebar" data-color="grey" data-image="">
       <app-sidebar></app-sidebar>
       <div class="sidebar-background" style="background-image: url(assets/img/sidebar-1.jpg)"></div>
@@ -8,9 +9,12 @@
   <div class="main-panel">
       <navbar-cmp></navbar-cmp>
       <router-outlet></router-outlet>
-      <div *ngIf="isMap('maps')">
+      <div *ngIf="checkPath('maps')">
           <footer-cmp></footer-cmp>
       </div>
   </div>
-
 </div>
+<div *ngIf="!checkPath('login')"  class="wrapper">
+    <router-outlet></router-outlet>
+</div>
+</form>
