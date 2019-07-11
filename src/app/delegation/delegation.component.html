@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <form>
+                    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                         <div class="col-md-8">
                             <div class="header">
                                     <h4 class="title">Podstawowe Dane</h4>
@@ -12,50 +12,51 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Zlecenia</label>
-                                            <input type="date" class="form-control">
+                                            <label>Data Zlecenia</label> <!--DATA PICKERY DO ZROBIENIA-->
+                                            <input name="orderDate" #orderDate="ngModel" [(ngModel)]="service.formData.orderDate" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Numer delegacji </label>
-                                            <input type="text" class="form-control">
+                                            <input name="numberDelegation" #numberDelegation="ngModel" [(ngModel)]="service.formData.numberDelegation" type="text" class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Wyjazdu</label>
-                                            <input type="date" class="form-control">
+                                            <label>Data Wyjazdu</label><!--DATA PICKERY DO ZROBIENIA-->
+                                            <input name="departureDate" #departureDate="ngModel" [(ngModel)]="service.formData.departureDate" type="text" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Powrotu</label>
-                                            <input type="date" class="form-control"> 
+                                            <label>Data Powrotu</label><!--DATA PICKERY DO ZROBIENIA-->
+                                            <input name="arrivalDate" #arrivalDate="ngModel" [(ngModel)]="service.formData.arrivalDate" type="text" class="form-control"> 
                                         </div>   
                                     </div>
                                 </div>
                                 <div class="row-md-12">
                                     <div class="form-group">
                                         <label>Cel wyjazdu</label>
-                                        <select class="form-control">
+                                        <select name="purpose" #purpose="ngModel" [(ngModel)]="service.formData.purpose" class="form-control">
                                             <option>Wdrożenie</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
+                                            <option>Serwis</option>
+                                            <option>Podpisanie umowy</option>
+                                            <option>Szkolenie</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row-md-12">
                                     <div class="form-group">
                                         <label>Transport</label>
-                                        <select class="form-control">
+                                        <select name="transport" #transport="ngModel" [(ngModel)]="service.formData.transport" class="form-control">
                                             <option>Samochód służbowy</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
+                                            <option>Samochód prywatny</option>
+                                            <option>Pociąg</option>
+                                            <option>Autobus</option>
+                                            <option>Taxi</option>
                                         </select>
                                     </div>
                                 </div>
@@ -63,13 +64,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Kraj</label>
-                                        <input type="text" class="form-control">
+                                        <input name="country" #country="ngModel" [(ngModel)]="service.formData.country" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Miasto</label>
-                                        <input type="text" class="form-control">
+                                        <input name="city" #city="ngModel" [(ngModel)]="service.formData.city" type="text" class="form-control">
                                     </div>
                                 </div>
                                 </div>
@@ -84,8 +85,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Umowa</label>
-                                            <select class="form-control">
-                                                <option>BB</option>
+                                            <select name="contractId" #contractId="ngModel" [(ngModel)]="service.formData.contractId" class="form-control">
+                                                <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
                                                 <option>4</option>
@@ -95,38 +96,36 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Zadanie</label>
-                                            <select class="form-control">
+                                            <select name="type" #type="ngModel" [(ngModel)]="service.formData.type" class="form-control">
                                                 <option>Wdrożenie</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
+                                                <option>Serwis</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label>Ryczałt</label>
-                                    <input type="text" class="form-control">
+                                    <input name="lumpSum" #lumpSum="ngModel" [(ngModel)]="service.formData.lumpSum" type="text" class="form-control">
                                 </div>
                                 <div class="row">
                                     <label>Dojazd</label>
-                                    <input type="text" class="form-control">
+                                    <input name="driveCost" #driveCost="ngModel" [(ngModel)]="service.formData.driveCost" type="text" class="form-control">
                                 </div>
                                 <div class="row">
                                     <label>Razem prejazdy</label>
-                                    <input type="text" class="form-control">
+                                    <input name="driveSum" #driveSum="ngModel" [(ngModel)]="service.formData.driveSum" type="text" class="form-control">
                                 </div>
                                 <div class="row">
                                     <label>Dieta</label>
-                                    <input type="text" class="form-control">
+                                    <input name="diet" #diet="ngModel" [(ngModel)]="service.formData.diet" type="text" class="form-control">
                                 </div>
                                 <div class="row">
                                     <label>Noclegi wg rachunku</label>
-                                    <input type="text" class="form-control">
+                                    <input name="accomodationCost" #accomodationCost="ngModel" [(ngModel)]="service.formData.accomodationCost" type="text" class="form-control">
                                 </div>
                                 <div class="row">
                                     <label>Inne wydatki</label>
-                                    <input type="text" class="form-control">
+                                    <input name="otherCost" #otherCost="ngModel" [(ngModel)]="service.formData.otherCost" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -212,12 +211,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <hr>
-                        <div class="stats">
-                            <i class="fa fa-history"></i> Updated 3 minutes ago
                         </div>
                     </div>
                 </div>             
