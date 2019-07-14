@@ -10,7 +10,6 @@ export class Delegation {
      transport: string;
      country: string;
      city: string;
-     type: string;
      lumpSum: number;
      driveCost: number;
      driveSum: number;
