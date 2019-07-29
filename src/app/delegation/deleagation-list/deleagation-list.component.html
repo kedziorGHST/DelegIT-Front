@@ -14,19 +14,17 @@
                       <th>{{  tableData1.headerRow[3]  }}</th>
                       <th>{{  tableData1.headerRow[4]  }}</th>
                       <th>{{  tableData1.headerRow[5]  }}</th>
-                      <th>{{  tableData1.headerRow[6]  }}</th>
-                      <th class="text-right">{{ tableData1.headerRow[7]  }}</th>
+                      <th class="text-right">{{ tableData1.headerRow[6]  }}</th>
                     </tr>
                 </thead>
               <tbody>
-                  <tr *ngFor="let row of service.list">
+                  <tr *ngFor="let row of service.userList">
                       <td class="text-center">{{ row.id }}</td>
                       <td >{{ row.numberDelegation }}</td>
                       <td >{{ row.departureDate | date: 'MM - dd - yyyy' }}</td>
                       <td >{{ row.arrivalDate | date: 'MM - dd - yyyy' }}</td>
                       <td >{{ row.purpose }}</td>
                       <td >{{ row.contractId }}</td>
-                      <td >{{ row.type }}</td>
                       <td class="td-actions text-right">
                           <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs" (click)="populateForm(row)">
                               <i class="fa fa-edit"></i>

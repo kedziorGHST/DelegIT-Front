@@ -33,7 +33,6 @@ export class DelegationComponent implements OnInit {
         transport: '',
         country: '',
         city: '',
-        type: '',
         lumpSum: 0,
         driveCost: 0,
         driveSum: 0,

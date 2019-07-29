@@ -116,40 +116,34 @@
                   [chartClass]="'ct-perfect-fourth'"
                   [chartType]="emailChartType"
                   [chartData]="emailChartData"
-                  [legendItems]="emailChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-clock-o'"
-                  [footerText]="'Dane sprzed 2 dni'">
+                  [legendItems]="emailChartLegendItems">
                 </lbd-chart>
             </div>
             <div class="col-md-8">
                 <lbd-chart
-                  [title]="'Wyjazdy'"
-                  [subtitle]="'Miesięczny bilans'"
-                  [chartType]="monthsChartType"
-                  [chartData]="monthsChartData"
-                  [chartOptions]="monthsChartOptions"
-                  [chartResponsive]="monthsChartResponsive"
-                  [legendItems]="monthsChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-history'"
-                  [footerText]="'Updated 3 minutes ago'">
+                    [title]="'Delegacje 2018'"
+                    [subtitle]="'Wszystkie delegacje za rok 2018'"
+                    [chartType]="activityChartType"
+                    [chartData]="activityChartData"
+                    [chartOptions]="activityChartOptions"
+                    [chartResponsive]="activityChartResponsive"
+                    [legendItems]="activityChartLegendItems">
                 </lbd-chart>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <lbd-chart
-                  [title]="'Delegacje 2018'"
-                  [subtitle]="'Wszystkie delegacje za rok 2018'"
-                  [chartType]="activityChartType"
-                  [chartData]="activityChartData"
-                  [chartOptions]="activityChartOptions"
-                  [chartResponsive]="activityChartResponsive"
-                  [legendItems]="activityChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-check'"
-                  [footerText]="'Data information certified'">
+                    [title]="'Wyjazdy'"
+                    [subtitle]="'Miesięczny bilans'"
+                    [chartType]="monthsChartType"
+                    [chartData]="monthsChartData"
+                    [chartOptions]="monthsChartOptions"
+                    [chartResponsive]="monthsChartResponsive"
+                    [legendItems]="monthsChartLegendItems"
+                    [withHr]="true"
+                    [footerIconClass]="'fa fa-history'"
+                    [footerText]="'Updated 3 minutes ago'">
                 </lbd-chart>
             </div>
             <div class="col-md-6">

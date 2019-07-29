@@ -21,7 +21,7 @@ export class DeleagationListComponent implements OnInit {
     this.tableData1 = {
       headerRow: [ '#', 'Numer delegacji', 'Data wyjazdu', 'Data przyjazdu', 'Cel wyjazdu', 'Umowa', 'Zadanie', 'Opcje']
     };
-    this.service.refreshList();
+    this.service.userDelegationList();
   }
 
   populateForm(row: Delegation) {
@@ -32,7 +32,7 @@ export class DeleagationListComponent implements OnInit {
     if (confirm('Czy jesteś pewien że chcesz usunac tę delegację? ')) {
     this.service.deleteDelegation(id)
     .subscribe(res => {
-      this.service.refreshList();
+      this.service.userDelegationList();
       this.showNotification('top', 'right', 'Pomyślnie usunięto delegacje');
     },
       err => {
