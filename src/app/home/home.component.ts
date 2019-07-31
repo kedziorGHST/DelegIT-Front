@@ -29,16 +29,8 @@ export class HomeComponent implements OnInit {
   constructor(private service: DelegationService) { }
 
   ngOnInit() {
-      var numberOfDelegations = this.service.delegationsNumber;
-      this.emailChartType = ChartType.Pie;
-      this.emailChartData = {
-        labels: ['60%', numberOfDelegations + '%'],
-        series: [60, numberOfDelegations ]
-      };
-      this.emailChartLegendItems = [
-        { title: 'Praca w firmie', imageClass: 'fa fa-circle text-info' },
-        { title: 'Delegacja', imageClass: 'fa fa-circle text-danger' }
-      ];
+      
+      this.fillPieChart();
 
       this.monthsChartType = ChartType.Line;
       this.monthsChartData = {
@@ -108,8 +100,22 @@ export class HomeComponent implements OnInit {
         { title: 'Praca w firmie', imageClass: 'fa fa-circle text-info' },
         { title: 'Delegacja', imageClass: 'fa fa-circle text-danger' }
       ];
+    }
 
-
+    fillPieChart() {
+      var numberOfDelegations = this.service.numberOfDelegations();
+      var officeWork = 21 - this.service.numberOfDelegations(); //średnia liczba dni pracy w miesiacu - liczba delegacji
+      var delegationPercent = Math.round((numberOfDelegations / 21) * 100);
+      var officePercent = Math.round((officeWork / 21) * 100);
+      this.emailChartType = ChartType.Pie;
+      this.emailChartData = {
+        labels: [officePercent + '%', delegationPercent + '%'],
+        series: [officeWork, numberOfDelegations ]
+      };
+      this.emailChartLegendItems = [
+        { title: 'Praca w firmie', imageClass: 'fa fa-circle text-info' },
+        { title: 'Delegacja', imageClass: 'fa fa-circle text-danger' }
+      ];
     }
 
 }

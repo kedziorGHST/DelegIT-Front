@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Delegation } from './delegation.model';
 import { HttpClient } from '@angular/common/http';
 import { count } from 'rxjs/operators';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,6 @@ export class DelegationService {
   readonly rootURL = 'http://localhost:58088/api';
   list: Delegation[];
   userList: Delegation[];
-  delegationsNumber: number;
 
   constructor(private http: HttpClient) { }
 
@@ -35,13 +36,15 @@ export class DelegationService {
   }
 
   userDelegationList() {
-    return this.http.get(this.rootURL + '/Delegations/list/1')//Dodać dynamicznego usera TO DO
+    return this.http.get(this.rootURL + '/Delegations/list/1')
     .toPromise()
-    .then(res => this.userList = res as Delegation[]);
+    .then(res => this.userList = res as Delegation[]); // TO DO - Invalid
   }
 
   numberOfDelegations() {
-    this.userDelegationList()
-    return this.userList.length; //Wyciągnąć liczbę rekordów z API TO DO
+    var obj = this.http.get(this.rootURL + '/Delegations/list/1');
+    var count = Object.keys(obj).length;
+    return count;
   }
+
 }
