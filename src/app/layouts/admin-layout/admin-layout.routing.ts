@@ -18,7 +18,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'delegation',     component: DelegationComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'customers',        component: CustomersComponent },
+    { path: 'customers',      component: CustomersComponent },
     { path: 'cars',           component: CarsComponent },
     { path: 'rides',          component: RidesComponent },
     { path: 'contracts',      component: ContractsComponent },

@@ -7,7 +7,7 @@
                         <h4 class="title">Dodaj nowy przejazd</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -30,28 +30,34 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <label>Skad</label>
-                                        <input type="text" class="form-control" placeholder="Skad" value="">
+                                        <input name="from" #from="ngModel" [(ngModel)]="service.formData.from" type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <label>Dokad</label>
-                                        <input type="text" class="form-control" placeholder="Dokad" value="">
+                                        <input name="where" #where="ngModel" [(ngModel)]="service.formData.where" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label>Odległość w KM</label>
+                                        <input name="km" #km="ngModel" [(ngModel)]="service.formData.km" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Od kiedy</label>
-                                        <input type="date" class="form-control" value="">
+                                        <input name="when" #when="ngModel" [(ngModel)]="service.formData.when" type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Do kiedy</label>
-                                        <input type="date" class="form-control" value="">
+                                        <input name="until" #until="ngModel" [(ngModel)]="service.formData.until" type="date" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -62,58 +68,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="header">
-                  <h4>Lista przejazdów</h4>
-                </div>
-                <div class="content">
-                    <div class="content table-responsive table-full-width">
-                        <table class="table">
-                          <thead>
-                              <tr>
-                                <th class="text-center">{{ tableData1.headerRow[0] }}</th>
-                                <th>{{  tableData1.headerRow[1]  }}</th>
-                                <th>{{  tableData1.headerRow[2] }}</th>
-                                <th>{{  tableData1.headerRow[3] }}</th>
-                                <th>{{  tableData1.headerRow[4]  }}</th>
-                                <th>{{  tableData1.headerRow[5]  }}</th>
-                                <th>{{  tableData1.headerRow[6]  }}</th>
-                                <th>{{  tableData1.headerRow[7]  }}</th>
-                                <th>{{  tableData1.headerRow[8]  }}</th>
-                                <th>{{  tableData1.headerRow[9]  }}</th>
-                                <th class="text-right">{{tableData1.headerRow[10]  }}</th>
-                              </tr>
-                          </thead>
-                        <tbody>
-                            <tr *ngFor="let row of tableData1.dataRows">
-                                <td class="text-center">{{ row[0] }}</td>
-                                <td>{{ row[1] }}</td>
-                                <td>{{ row[2] }}</td>
-                                <td>{{ row[3] }}</td>
-                                <td>{{ row[4] }}</td>
-                                <td>{{ row[5] }}</td>
-                                <td>{{ row[6] }}</td>
-                                <td>{{ row[7] }}</td>
-                                <td>{{ row[8] }}</td>
-                                <td>{{ row[9] }}</td>
-                                <td class="td-actions text-right">
-                                    <a rel="tooltip" title="Zobacz Profil" class="btn btn-info btn-simple btn-xs">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-              </div>
+            <div>
+                <app-rides-list></app-rides-list>
             </div>
         </div>
     </div>

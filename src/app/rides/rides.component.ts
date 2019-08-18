@@ -1,31 +1,88 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { RidesService } from './rides.service';
+import { ToastrService } from 'ngx-toastr';
 
-declare interface TableData {
-  headerRow: string[];
-  dataRows: string[][];
-}
-
+declare var $: any;
 @Component({
   selector: 'app-rides',
   templateUrl: './rides.component.html',
   styleUrls: ['./rides.component.scss']
 })
 export class RidesComponent implements OnInit {
-  public tableData1: TableData;
 
-  constructor() { }
+  constructor(private service: RidesService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.tableData1 = {
-      headerRow: [ '#', 'Numer Rejestracyjny', 'Pracownik', 'Typ', 'Marka', 'Model', 'Wyjazd', 'Przyjazd', 'Od', 'Do', 'Opcje'],
-      dataRows: [
-      ['1', 'SWD12345', 'Aleksander Kędzior', 'Prywatny', 'BMW', 'E90', 'Katowice', 'Warszawa', '7/3/2019', '7/4/2019', ''],
-      ['2', 'SK15978', 'John Doe', 'Służbowy', 'KIA', 'Ceed', 'Gliwice', 'Poznań', '7/3/2019', '7/3/2019', ''],
-      ['3', 'SR45687', 'Jan Kowalski', 'Służbowy', 'Volkswagen', 'Passat', 'Gliwice', 'Katowice', '5/3/2019', '5/3/2019', ''],
-      ['4', 'KR45678', 'Adam Nowak', 'Służbowy', 'Opel', 'Corsa', 'Warszawa', 'Gliwice', '3/3/2019', '3/3/2019', ''],
-      ['5', 'SZ25879', 'Szymon Stracała', 'Służbowy', 'Chevrolet', 'Cruze', 'Rzeszów', 'Gliwice', '10/3/2019', '11/3/2019', '']
-      ]
-      };
+    this.resetForm();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+    form.form.reset();
+    }
+    this.service.formData = {
+        id: 0,
+        userId: 1, //DO zrobienia - podmiana na prawdziwy user ID
+        carId: 1, 
+        when: null,
+        until: null,
+        where: '',
+        from: '',
+        km: 0,
+
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    if (this.service.formData.id === 0) {
+      this.insertRecord(form)
+    } else {
+      this.updateRecord(form)
+    }
+  }
+
+  insertRecord(form: NgForm) {
+    this.service.postRide().subscribe(
+      res => {
+        this.resetForm();
+        this.showNotification('top', 'right', 'Pomyślnie dodano nową delegacje');
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  updateRecord(form: NgForm) {
+    this.service.putRide().subscribe(
+      res => {
+        this.resetForm();
+        this.showNotification('top', 'right', 'Dane zaktualizowane pomyślnie');
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  showNotification(from, align, message) {
+    const type = ['', 'info', 'success', 'warning', 'danger'];
+
+    const color = 2;
+    $.notify({
+        icon: 'pe-7s-gift',
+        message: message
+      }, {
+        type: type[color],
+        timer: 1000,
+        placement: {
+            from: from,
+            align: align
+        }
+      });
   }
 
 }
