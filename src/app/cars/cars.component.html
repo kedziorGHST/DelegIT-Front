@@ -7,24 +7,24 @@
                         <h4 class="title">Dodaj nowy pojazd</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Model</label>
-                                        <input type="text" class="form-control" placeholder="Model" value="">
+                                        <input name="model" #model="ngModel" [(ngModel)]="service.formData.model" type="text" class="form-control" placeholder="Model">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Marka</label>
-                                        <input type="text" class="form-control" placeholder="Marka" value="">
+                                        <input name="company" #company="ngModel" [(ngModel)]="service.formData.company" type="text" class="form-control" placeholder="Marka">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Rok Produkcji</label>
-                                        <input type="email" class="form-control" placeholder="Rok produkcji" value="">
+                                        <label>Rok Produkcji</label>
+                                        <input name="year" #year="ngModel" [(ngModel)]="service.formData.year" type="text" class="form-control" placeholder="Rok Produkcji">
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Typ</label>
-                                        <select class="form-control">
+                                        <select class="form-control" name="type" [(ngModel)]="service.formData.type" required>
+                                            <option value="" disabled selected hidden>Wybierz rodzaj pojazdu</option>
                                             <option>Służbowy</option>
                                             <option>Prywatny</option>
                                         </select>
@@ -42,7 +43,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Numer rejestracyjny</label>
-                                        <input type="text" class="form-control" placeholder="Numer rejestracyjny" value="">
+                                        <input name="paltes" #plates="ngModel" [(ngModel)]="service.formData.plates" type="text" class="form-control" placeholder="Numer Rejestracyjny">
                                     </div>
                                 </div>
                             </div>
@@ -51,13 +52,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Kolor</label>
-                                        <input type="text" class="form-control" placeholder="Kolor" value="">
+                                        <input name="colour" #colour="ngModel" [(ngModel)]="service.formData.colour" type="text" class="form-control" placeholder="Kolor">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Moc silnika</label>
-                                        <input type="text" class="form-control" placeholder="KM" value="">
+                                        <input name="horsePower" #horsePower="ngModel" [(ngModel)]="service.formData.horsePower" type="text" class="form-control" placeholder="Moc silnika">
                                     </div>
                                 </div>
                             </div>
@@ -68,50 +69,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="header">
-                  <h4>Lista samochodów</h4>
-                </div>
-                <div class="content">
-                    <div class="content table-responsive table-full-width">
-                        <table class="table">
-                          <thead>
-                              <tr>
-                                <th class="text-center">{{ tableData1.headerRow[0] }}</th>
-                                <th>{{  tableData1.headerRow[1]  }}</th>
-                                <th>{{  tableData1.headerRow[2] }}</th>
-                                <th>{{  tableData1.headerRow[3] }}</th>
-                                <th>{{  tableData1.headerRow[4]  }}</th>
-                                <th>{{  tableData1.headerRow[5]  }}</th>
-                                <th class="text-right">{{tableData1.headerRow[6]  }}</th>
-                              </tr>
-                          </thead>
-                        <tbody>
-                            <tr *ngFor="let row of tableData1.dataRows">
-                                <td class="text-center">{{ row[0] }}</td>
-                                <td>{{ row[1] }}</td>
-                                <td>{{ row[2] }}</td>
-                                <td>{{ row[3] }}</td>
-                                <td>{{ row[4] }}</td>
-                                <td>{{ row[5] }}</td>
-                                <td class="td-actions text-right">
-                                    <a rel="tooltip" title="Zobacz Profil" class="btn btn-info btn-simple btn-xs">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-              </div>
+            <div>
+                <app-cars-list></app-cars-list>
             </div>
         </div>
     </div>
