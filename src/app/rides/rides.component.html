@@ -13,8 +13,7 @@
                                     <div class="form-group">
                                         <label>Pracownik</label>
                                         <select class="form-control">
-                                            <option>John Doe</option>
-                                            <option>Aleksander Kędzior</option>
+                                                <option *ngFor="let item of service.userList" [value]="item.id">{{ item.id }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -22,8 +21,7 @@
                                     <div class="form-group">
                                         <label>Samochód</label>
                                         <select class="form-control">
-                                            <option>SWD12345 BMW E90</option>
-                                            <option>SK15987 KIA RIO</option>
+                                            <option *ngFor="let item of service.carList" [value]="item.id">{{ item.plates }}</option>
                                         </select>
                                     </div>
                                 </div>

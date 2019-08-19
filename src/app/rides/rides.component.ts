@@ -15,6 +15,8 @@ export class RidesComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
+    this.service.getCars();
+    this.service.getUsers();
   }
 
   resetForm(form?: NgForm) {
@@ -23,14 +25,13 @@ export class RidesComponent implements OnInit {
     }
     this.service.formData = {
         id: 0,
-        userId: 1, //DO zrobienia - podmiana na prawdziwy user ID
-        carId: 1, 
+        userId: 0,
+        carId: 0, 
         when: null,
         until: null,
         where: '',
         from: '',
         km: 0,
-
     }
   }
 
@@ -40,6 +41,7 @@ export class RidesComponent implements OnInit {
     } else {
       this.updateRecord(form)
     }
+    console.log(form);
   }
 
   insertRecord(form: NgForm) {

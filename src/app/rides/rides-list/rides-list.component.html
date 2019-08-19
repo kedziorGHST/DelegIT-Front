@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
               <tbody>
-                  <tr *ngFor="let row of service.userList">
+                  <tr *ngFor="let row of service.rideList">
                       <td class="text-center">{{ row.Id }}</td>
                       <td >{{ row.when | date: 'MM - dd - yyyy' }}</td>
                       <td >{{ row.until | date: 'MM - dd - yyyy' }}</td>
