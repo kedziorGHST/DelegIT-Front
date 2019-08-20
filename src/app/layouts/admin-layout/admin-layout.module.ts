@@ -23,6 +23,7 @@ import { DeleagationListComponent } from 'app/delegation/deleagation-list/deleag
 import { RidesListComponent } from 'app/rides/rides-list/rides-list.component';
 import { CarsListComponent } from 'app/cars/cars-list/cars-list.component';
 import { ContractsListComponent } from 'app/contracts/contracts-list/contracts-list.component';
+import { VisitsListComponent } from 'app/visits/visits-list/visits-list.component';
 
 
 
@@ -49,6 +50,7 @@ import { ContractsListComponent } from 'app/contracts/contracts-list/contracts-l
     ContractsComponent,
     ContractsListComponent,
     VisitsComponent,
+    VisitsListComponent,
     LoginComponent
   ]
 })
