@@ -30,11 +30,11 @@ export class RidesListComponent implements OnInit {
   }
 
   onDelete(id) {
-    if (confirm('Czy jesteś pewien że chcesz usunac tę delegację? ')) {
+    if (confirm('Czy jesteś pewien że chcesz usunąć ten przjazd? ')) {
     this.service.deleteRide(id)
     .subscribe(res => {
       this.service.userRideList();
-      this.showNotification('top', 'right', 'Pomyślnie usunięto delegacje');
+      this.showNotification('top', 'right', 'Pomyślnie usunięto przejazd');
     },
       err => {
         console.log(err);

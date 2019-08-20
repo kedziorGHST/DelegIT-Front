@@ -48,7 +48,7 @@ export class RidesComponent implements OnInit {
     this.service.postRide().subscribe(
       res => {
         this.resetForm();
-        this.showNotification('top', 'right', 'Pomyślnie dodano nową delegacje');
+        this.showNotification('top', 'right', 'Pomyślnie dodano nowy przejazd');
         this.service.refreshList();
       },
       err => {
