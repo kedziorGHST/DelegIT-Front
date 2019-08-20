@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { count } from 'rxjs/operators';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { Contract } from 'app/contracts/contracts.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class DelegationService {
   readonly rootURL = 'http://localhost:5000/api';
   list: Delegation[];
   userList: Delegation[];
+  contractList: Contract[];
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +41,12 @@ export class DelegationService {
     return this.http.get(this.rootURL + '/Delegations/list/1')
     .toPromise()
     .then(res => this.userList = res as Delegation[]); // TO DO - Invalid
+  }
+
+  getContractList() {
+    return this.http.get(this.rootURL + '/Contracts')
+    .toPromise()
+    .then(res => this.contractList = res as Contract[]);
   }
 
   numberOfDelegations() {

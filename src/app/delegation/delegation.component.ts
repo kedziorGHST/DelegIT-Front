@@ -15,6 +15,7 @@ export class DelegationComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
+    this.service.getContractList();
   }
 
   resetForm(form?: NgForm) {

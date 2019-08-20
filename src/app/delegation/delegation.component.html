@@ -12,8 +12,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Zlecenia</label> <!--DATA PICKERY DO ZROBIENIA-->
-                                            <input name="orderDate" #orderDate="ngModel" [(ngModel)]="service.formData.orderDate" type="text" class="form-control">
+                                            <label>Data Zlecenia</label> 
+                                            <input name="orderDate" #orderDate="ngModel" [(ngModel)]="service.formData.orderDate" type="date" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -26,14 +26,14 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Wyjazdu</label><!--DATA PICKERY DO ZROBIENIA-->
-                                            <input name="departureDate" #departureDate="ngModel" [(ngModel)]="service.formData.departureDate" type="text" class="form-control">
+                                            <label>Data Wyjazdu</label>
+                                            <input name="departureDate" #departureDate="ngModel" [(ngModel)]="service.formData.departureDate" type="date" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Data Powrotu</label><!--DATA PICKERY DO ZROBIENIA-->
-                                            <input name="arrivalDate" #arrivalDate="ngModel" [(ngModel)]="service.formData.arrivalDate" type="text" class="form-control"> 
+                                            <label>Data Powrotu</label>
+                                            <input name="arrivalDate" #arrivalDate="ngModel" [(ngModel)]="service.formData.arrivalDate" type="date" class="form-control"> 
                                         </div>   
                                     </div>
                                 </div>
@@ -41,6 +41,7 @@
                                     <div class="form-group">
                                         <label>Cel wyjazdu</label>
                                         <select name="purpose" #purpose="ngModel" [(ngModel)]="service.formData.purpose" class="form-control">
+                                            <option value="" disabled selected hidden>Wybierz Cel wyjazdu</option> 
                                             <option>Wdrożenie</option>
                                             <option>Serwis</option>
                                             <option>Podpisanie umowy</option>
@@ -52,6 +53,7 @@
                                     <div class="form-group">
                                         <label>Transport</label>
                                         <select name="transport" #transport="ngModel" [(ngModel)]="service.formData.transport" class="form-control">
+                                            <option value="" disabled selected hidden>Wybierz Rodzaj transportu</option>
                                             <option>Samochód służbowy</option>
                                             <option>Samochód prywatny</option>
                                             <option>Pociąg</option>
@@ -86,10 +88,8 @@
                                         <div class="form-group">
                                             <label>Umowa</label>
                                             <select name="contractId" #contractId="ngModel" [(ngModel)]="service.formData.contractId" class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
+                                                    <option value="" disabled selected hidden>Wybierz Umowe</option>
+                                                    <option *ngFor="let item of service.contractList" [value]="item.id">{{ item.id }}</option>
                                             </select>
                                         </div>
                                     </div>
