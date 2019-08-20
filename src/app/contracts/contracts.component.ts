@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ContractsService } from './contracts.service';
+import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 
-declare interface TableData {
-  headerRow: string[];
-  dataRows: string[][];
-}
+declare var $: any;
 
 @Component({
   selector: 'app-contracts',
@@ -11,21 +11,77 @@ declare interface TableData {
   styleUrls: ['./contracts.component.scss']
 })
 export class ContractsComponent implements OnInit {
-  public tableData1: TableData;
 
-  constructor() { }
+  constructor(private service: ContractsService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.tableData1 = {
-      headerRow: [ '#', 'Rodzaj', 'Klient', 'Od', 'Do', 'Zakres', 'Opcje'],
-      dataRows: [
-      ['1', 'Serwis', 'IPIN Warszawa', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
-      ['2', 'Wdrożenie', 'UCK Ceglana', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
-      ['3', 'Serwis', 'UCK Ligota', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
-      ['4', 'Wdrożenie', 'UCK Ligota', '7/3/2019', '8/3/2019', 'Kadry,Płace', ''],
-      ['5', 'Serwis', 'IPIN Warszawa', '7/3/2019', '8/3/2019', 'Kadry,Płace', '']
-      ]
-      };
+    this.resetForm();
+    this.service.getCustomers();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+    form.form.reset();
+    }
+    this.service.formData = {
+        id: 0,
+        type: '',
+        customerId: 0,
+        from: null,
+        to: null,
+        range: 'Kadry,Księgowość' //TO DO - Value from Checkboxes
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    if (this.service.formData.id === 0) {
+      this.insertRecord(form)
+    } else {
+      this.updateRecord(form)
+    }
+  }
+
+  insertRecord(form: NgForm) {
+    this.service.postContract().subscribe(
+      res => {
+        this.resetForm();
+        this.showNotification('top', 'right', 'Pomyślnie dodano nową umowe');
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  updateRecord(form: NgForm) {
+    this.service.putContract().subscribe(
+      res => {
+        this.resetForm();
+        this.showNotification('top', 'right', 'Dane zaktualizowane pomyślnie');
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  showNotification(from, align, message) {
+    const type = ['', 'info', 'success', 'warning', 'danger'];
+
+    const color = 2;
+    $.notify({
+        icon: 'pe-7s-gift',
+        message: message
+      }, {
+        type: type[color],
+        timer: 1000,
+        placement: {
+            from: from,
+            align: align
+        }
+      });
   }
 
 }

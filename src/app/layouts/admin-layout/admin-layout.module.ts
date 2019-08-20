@@ -22,6 +22,7 @@ import { LoginComponent } from 'app/user/login/login.component';
 import { DeleagationListComponent } from 'app/delegation/deleagation-list/deleagation-list.component';
 import { RidesListComponent } from 'app/rides/rides-list/rides-list.component';
 import { CarsListComponent } from 'app/cars/cars-list/cars-list.component';
+import { ContractsListComponent } from 'app/contracts/contracts-list/contracts-list.component';
 
 
 
@@ -46,6 +47,7 @@ import { CarsListComponent } from 'app/cars/cars-list/cars-list.component';
     RidesComponent,
     RidesListComponent,
     ContractsComponent,
+    ContractsListComponent,
     VisitsComponent,
     LoginComponent
   ]

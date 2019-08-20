@@ -41,7 +41,6 @@ export class RidesComponent implements OnInit {
     } else {
       this.updateRecord(form)
     }
-    console.log(form);
   }
 
   insertRecord(form: NgForm) {

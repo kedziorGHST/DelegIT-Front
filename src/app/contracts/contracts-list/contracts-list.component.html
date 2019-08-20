@@ -1,0 +1,42 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4>Lista umów</h4>
+      </div>
+      <div class="content">
+          <div class="content table-responsive table-full-width">
+              <table class="table">
+                <thead>
+                    <tr>
+                      <th class="text-center">{{ tableData1.headerRow[0] }}</th>
+                      <th>{{  tableData1.headerRow[1]  }}</th>
+                      <th>{{  tableData1.headerRow[2] }}</th>
+                      <th>{{  tableData1.headerRow[3] }}</th>
+                      <th>{{  tableData1.headerRow[4]  }}</th>
+                      <th>{{  tableData1.headerRow[5]  }}</th>
+                      <th class="text-right">{{tableData1.headerRow[6]  }}</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr *ngFor="let row of service.list">
+                      <td class="text-center">{{ row.id }}</td>
+                      <td>{{ row.customerId }}</td>
+                      <td>{{ row.type }}</td>
+                      <td>{{ row.from | date: 'MM - dd - yyyy' }}</td>
+                      <td>{{ row.to | date: 'MM - dd - yyyy' }}</td>
+                      <td>{{ row.range }}</td>
+                      <td class="td-actions text-right">
+                          <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs" (click)="populateForm(row)">
+                              <i class="fa fa-edit"></i>
+                          </a>
+                          <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs" (click)="onDelete(row.id)">
+                              <i class="fa fa-times"></i>
+                          </a>
+                      </td>
+                  </tr>
+              </tbody>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>

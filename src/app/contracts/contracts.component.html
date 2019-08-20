@@ -7,12 +7,13 @@
                         <h4 class="title">Dodaj nowa umowe</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Rodzaj</label>
-                                        <select class="form-control">
+                                        <select class="form-control" name="type" #type="ngModel" [(ngModel)]="service.formData.type" required>
+                                            <option value="" disabled selected hidden>Wybierz Rodzaj Umowy</option>
                                             <option>Serwis</option>
                                             <option>Wdrożenie</option>
                                         </select>
@@ -21,9 +22,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Placówka</label>
-                                        <select class="form-control">
-                                            <option>IPIN Warszawa</option>
-                                            <option>UCK Katowice</option>
+                                        <select class="form-control" name="customerId" #customerId="ngModel" [(ngModel)]="service.formData.customerId" required>
+                                                <option value="" disabled selected hidden>Wybierz Placówke</option>
+                                                <option *ngFor="let item of service.customerList" [value]="item.id">{{ item.fullCompanyName }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -33,35 +34,34 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Od kiedy</label>
-                                        <input type="date" class="form-control" value="">
+                                        <input name="from" #from="ngModel" [(ngModel)]="service.formData.from" type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Do kiedy</label>
-                                        <input type="date" class="form-control" value="">
+                                        <input name="to" #to="ngModel" [(ngModel)]="service.formData.to" type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-6">
                                     <label>Zakres</label>
-
                                     <div class="checkbox">
-                                      <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+                                      <input type="checkbox" value="Kadry" id="checkbox1" data-toggle="checkbox">
                                       <label for="checkbox1">
                                         Kadry
                                       </label>
                                     </div>
 
                                     <div class="checkbox">
-                                      <input type="checkbox" value="" id="checkbox2" data-toggle="checkbox">
+                                      <input type="checkbox" value="Płace" id="checkbox2" data-toggle="checkbox">
                                       <label for="checkbox2">
                                         Płace
                                       </label>
                                     </div>
 
                                     <div class="checkbox">
-                                      <input type="checkbox" value="" id="checkbox3" data-toggle="checkbox">
+                                      <input type="checkbox" value="Księgowość" id="checkbox3" data-toggle="checkbox">
                                       <label for="checkbox3">
                                         Księgowość
                                       </label>
@@ -77,50 +77,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="header">
-                  <h4>Lista umów</h4>
-                </div>
-                <div class="content">
-                    <div class="content table-responsive table-full-width">
-                        <table class="table">
-                          <thead>
-                              <tr>
-                                <th class="text-center">{{ tableData1.headerRow[0] }}</th>
-                                <th>{{  tableData1.headerRow[1]  }}</th>
-                                <th>{{  tableData1.headerRow[2] }}</th>
-                                <th>{{  tableData1.headerRow[3] }}</th>
-                                <th>{{  tableData1.headerRow[4]  }}</th>
-                                <th>{{  tableData1.headerRow[5]  }}</th>
-                                <th class="text-right">{{tableData1.headerRow[6]  }}</th>
-                              </tr>
-                          </thead>
-                        <tbody>
-                            <tr *ngFor="let row of tableData1.dataRows">
-                                <td class="text-center">{{ row[0] }}</td>
-                                <td>{{ row[1] }}</td>
-                                <td>{{ row[2] }}</td>
-                                <td>{{ row[3] }}</td>
-                                <td>{{ row[4] }}</td>
-                                <td>{{ row[5] }}</td>
-                                <td class="td-actions text-right">
-                                    <a rel="tooltip" title="Zobacz Profil" class="btn btn-info btn-simple btn-xs">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a rel="tooltip" title="Usuń" class="btn btn-danger btn-simple btn-xs">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-              </div>
+            <div>
+                <app-contracts-list></app-contracts-list>
             </div>
         </div>
     </div>
