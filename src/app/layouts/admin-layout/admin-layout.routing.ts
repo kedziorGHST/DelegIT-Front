@@ -11,6 +11,7 @@ import { RidesComponent } from 'app/rides/rides.component';
 import { ContractsComponent } from 'app/contracts/contracts.component';
 import { VisitsComponent } from 'app/visits/visits.component';
 import { LoginComponent } from 'app/user/login/login.component';
+import { RaportsComponent } from 'app/raports/raports.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'home',           component: HomeComponent },
@@ -24,4 +25,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'contracts',      component: ContractsComponent },
     { path: 'visits',         component: VisitsComponent },
     { path: 'login',          component: LoginComponent },
+    { path: 'raports',        component: RaportsComponent },
 ];

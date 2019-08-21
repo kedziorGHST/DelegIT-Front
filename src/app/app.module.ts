@@ -21,6 +21,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AuthGuard } from 'auth/auth.guard';
 import { AuthService } from 'auth/auth.service';
+import { RaportsComponent } from './raports/raports.component';
 
 @NgModule({
   imports: [

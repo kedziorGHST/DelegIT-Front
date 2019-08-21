@@ -24,6 +24,7 @@ import { RidesListComponent } from 'app/rides/rides-list/rides-list.component';
 import { CarsListComponent } from 'app/cars/cars-list/cars-list.component';
 import { ContractsListComponent } from 'app/contracts/contracts-list/contracts-list.component';
 import { VisitsListComponent } from 'app/visits/visits-list/visits-list.component';
+import { RaportsComponent } from 'app/raports/raports.component';
 
 
 
@@ -51,6 +52,7 @@ import { VisitsListComponent } from 'app/visits/visits-list/visits-list.componen
     ContractsListComponent,
     VisitsComponent,
     VisitsListComponent,
+    RaportsComponent,
     LoginComponent
   ]
 })
