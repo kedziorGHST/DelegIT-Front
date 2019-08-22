@@ -7,39 +7,44 @@
                         <h4 class="title">Edytuj profil</h4>
                     </div>
                     <div class="content">
-                        <form>
+                        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Firma</label>
-                                        <input type="text" class="form-control" placeholder="Firma" value="IT Go">
+                                        <input name="companyName" #companyName="ngModel" [(ngModel)]="service.formUserInfoData.companyName" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Login</label>
-                                        <input type="text" class="form-control" placeholder="Login" value="aleked">
+                                        <input name="login" #login="ngModel" [(ngModel)]="service.formUserData.login" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Adres Email</label>
-                                        <input type="email" class="form-control" placeholder="Email" value="testmail@gmail.com">
+                                        <input name="email" #email="ngModel" [(ngModel)]="service.formUserData.email" type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Imię</label>
-                                        <input type="text" class="form-control" placeholder="Name" value="Aleksander">
+                                        <input name="fname" #fname="ngModel" [(ngModel)]="service.formUserInfoData.fname" type="text" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nazwisko</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="Kędzior">
+                                        <input name="lname" #lname="ngModel" [(ngModel)]="service.formUserInfoData.lname" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Numer Telefonu</label>
+                                        <input name="mobileNumber" #mobileNumber="ngModel" [(ngModel)]="service.formUserInfoData.mobileNumber" type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -48,16 +53,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Adres</label>
-                                        <input type="text" class="form-control" placeholder="Home Address" value="Hoża 1">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Stanowisko</label>
-                                        <input type="text" class="form-control" placeholder="Stanowisko" value="Specjalista ds. wdrożeń">
+                                        <input name="address" #address="ngModel" [(ngModel)]="service.formUserInfoData.address" type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -66,19 +62,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Miasto</label>
-                                        <input type="text" class="form-control" placeholder="City" value="Warszawa">
+                                        <input name="city" #city="ngModel" [(ngModel)]="service.formUserInfoData.city" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Kraj</label>
-                                        <input type="text" class="form-control" placeholder="Country" value="Polska">
+                                        <input name="country" #country="ngModel" [(ngModel)]="service.formUserInfoData.country" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Kod pocztowy</label>
-                                        <input type="text" class="form-control" placeholder="Kod pocztowy" value="44-300">
+                                        <input name="postcode" #postcode="ngModel" [(ngModel)]="service.formUserInfoData.postcode" type="text" class="form-control">
                                     </div>
                                 </div>
                             </div>

@@ -21,7 +21,6 @@ export class RidesService {
   constructor(private http: HttpClient) { }
 
   postRide() {
-    console.log(this.formData);
     return this.http.post(this.rootURL + '/Rides', this.formData);
   }
 
