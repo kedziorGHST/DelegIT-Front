@@ -7,4 +7,5 @@ export class Cars {
     plates: string;
     colour: string;
     horsePower: number;
+    capacity: number;
 }

@@ -36,7 +36,8 @@ export class CarsComponent implements OnInit {
       type: '',
       plates: '',
       colour: '',
-      horsePower: 0
+      horsePower: 0,
+      capacity: 0
     }
   }
 

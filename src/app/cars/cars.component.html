@@ -61,6 +61,12 @@
                                         <input name="horsePower" #horsePower="ngModel" [(ngModel)]="service.formData.horsePower" type="text" class="form-control" placeholder="Moc silnika">
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Pojemność silnika</label>
+                                            <input name="capacity" #capacity="ngModel" [(ngModel)]="service.formData.capacity" type="text" class="form-control" placeholder="Pojemność silnika">
+                                        </div>
+                                    </div>
                             </div>
 
                             <button type="submit" class="btn btn-info btn-fill pull-right">Zapisz</button>

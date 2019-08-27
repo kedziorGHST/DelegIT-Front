@@ -1,3 +1,40 @@
-<p>
-  raports works!
-</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart
+                  [title]="'Wyjazdy i praca zdalna wśród pracowników'"
+                  [subtitle]="'2019 - procenty'"
+                  [chartClass]="'ct-perfect-fourth'"
+                  [chartType]="emailChartType"
+                  [chartData]="emailChartData"
+                  [legendItems]="emailChartLegendItems">
+                </lbd-chart>
+            </div>
+            <div class="col-md-8">
+                <lbd-chart
+                  [title]="'Rodzaj pracy na przestrzeni roku'"
+                  [subtitle]="'2019 - godziny'"
+                  [chartType]="hoursChartType"
+                  [chartData]="hoursChartData"
+                  [chartOptions]="hoursChartOptions"
+                  [chartResponsive]="hoursChartResponsive"
+                  [legendItems]="hoursChartLegendItems">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <lbd-chart
+                  [title]="'Wyjazdy z podziałem na pracowników'"
+                  [subtitle]="'Lipiec 2019 - ilość dni'"
+                  [chartType]="activityChartType"
+                  [chartData]="activityChartData"
+                  [chartOptions]="activityChartOptions"
+                  [chartResponsive]="activityChartResponsive"
+                  [legendItems]="activityChartLegendItems">
+                </lbd-chart>
+            </div>
+        </div>
+    </div>
+</div>

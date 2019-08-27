@@ -16,7 +16,8 @@
                     <th>{{  tableData1.headerRow[5]  }}</th>
                     <th>{{  tableData1.headerRow[6]  }}</th>
                     <th>{{  tableData1.headerRow[7]  }}</th>
-                    <th class="text-right">{{tableData1.headerRow[8]  }}</th>
+                    <th>{{  tableData1.headerRow[8]  }}</th>
+                    <th class="text-right">{{tableData1.headerRow[9]  }}</th>
                   </tr>
               </thead>
             <tbody>
@@ -29,6 +30,7 @@
                     <td>{{ row.horsePower }}</td>
                     <td>{{ row.plates }}</td>
                     <td>{{ row.colour }}</td>
+                    <td>{{ row.capacity }}</td>
                     <td class="td-actions text-right">
                         <a rel="tooltip" title="Edytuj Profil" class="btn btn-success btn-simple btn-xs" (click)="populateForm(row)">
                             <i class="fa fa-edit"></i>

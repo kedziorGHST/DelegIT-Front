@@ -20,7 +20,7 @@ export class CarsListComponent implements OnInit {
 
   ngOnInit() {
     this.tableData1 = {
-      headerRow: [ '#', 'Model', 'Marka', 'Rok Produkcji', 'Typ', 'KM', 'Tablice', 'Kolor',  'Opcje']
+      headerRow: [ '#', 'Model', 'Marka', 'Rok Produkcji', 'Typ', 'KM', 'Tablice', 'Kolor', 'Pojemność Silnika',  'Opcje']
     };
     this.service.getCars();
   }
